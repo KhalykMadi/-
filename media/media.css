@@ -1,0 +1,242 @@
+@media screen and (max-width: 1200px) {
+    .one{
+        min-height: 100vh;
+    }
+    .block-two{
+        width: 20.5%;
+        margin: 0;
+    }
+    .block-three{
+        width: 20%;
+    }
+    .block-four{
+        width: 18%;
+    }
+    .right-footer__container{
+        display: none;
+    }
+    .gallery__img{
+        width: 201px;
+        height: 201px;
+    }
+    .btn-menu{
+        width: 203px;
+    }
+    .btn-menu{
+        width: 192px;
+    }
+}
+
+@media screen and (max-width: 930px){
+    .inner-main{
+        height: 90%;
+    }
+    .footer{
+        height: 55px;
+    }
+    .block-two,
+    .menu-block__number{
+        display: none;
+    }
+
+    .block-four{
+        width: 0;
+    }
+
+    .mini-slider{
+        width: 80%;
+    }
+    .courses__container{
+        width: 88%;
+    }
+
+    .info__container{
+        height: 464px;
+    }
+
+    .left-container__paragraph{
+        line-height: 17px;
+    }
+
+    .gallery__container{
+        flex-direction: column;
+    }
+    .gallery__img{
+        width: 172px;
+        height: 141px;
+    }
+    .tabs__nav{
+        height: 165px;
+    }
+
+    .map{
+        display: none;
+    }
+
+    .menu-burger{
+        display: flex;
+    }
+
+    .footer__link{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .block-three,
+    .btn{
+        display: none;
+    }
+
+    .main__headig{
+        font-size: 55px;
+        line-height: 58px;
+    }
+    .info{
+        height: 100vh;
+    }
+
+    .info__container{
+        flex-direction: column;
+    }
+
+    .left-container{
+        width: 92%;
+    }
+    .left-container__paragraph{
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .courses__container{
+        justify-content: center;
+    }
+    .courses-two,
+    .drive-courses{
+        display: none;
+    }
+    .cran-courses{
+        display: flex;
+    }
+
+    .tabs__nav{
+        height: 151px;
+    }
+    .gallery__img{
+        width: 107px;
+        height: 123px;
+    }
+
+    .tabs__nav-btn{
+        width: 161px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu{
+        width: 225px;
+    }
+    .menu-block__paragraph{
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .info,
+    .courses,
+    .gallery,
+    .contacts{
+        height: 100vh;
+    }
+    .right-container__img{
+        display: none;
+    }
+    .one{
+        height: 100vh;
+    }
+    .footer{
+        display: none;
+    }
+    .inner-main{
+        height: 90%;
+    }
+   
+    .main__headig{
+        font-size:  43px;
+        line-height: 50px;
+    }
+    .main__paragraph{
+        font-size: 21px;
+        line-height: 32px;
+    }
+
+    .left-container__paragraph{
+        margin-top: 0;
+        font-size: 11px;
+        line-height: 12px;
+    }
+
+    .inner-info,
+    .inner-courses{
+        height: 90%;
+    }
+
+    .info__container{
+        height: 373px;
+    }
+    /* .right-container__img{
+        display: none;
+    } */
+
+    .mini-slider{
+        height: 400px;
+    }
+    .courses-one__img{
+        width: 150px;
+        height: 150px;
+    }
+    .courses-one__paragraph{
+        white-space: nowrap;
+    }
+    .courses__btn{
+        width: 160px;
+        height: 38px;
+    }
+    .inner-gallery{
+        height: 100%;
+    }
+    .gallery__container{
+        height: 75%;
+    }
+    .tabs__content{
+        height: 71%;
+    }
+    .tabs__nav{
+        align-items: center;
+        height: 140px;
+    }
+    .tabs__nav-btn{
+        width: 150px;
+        height: 42px;
+    }
+    .gallery__img:last-child{
+        display: none;
+    }
+    .btn-menu{
+        height: 180px;
+    }
+
+    .adres,
+    .tel-number{
+        line-height: 21px;
+    }
+    .left-contacts__container{
+        width: 100%;
+    }
+    .input,
+    .contacts__btn{
+        width: 284px;
+    }
+    .footer__link{
+        display: none;
+    }
+}

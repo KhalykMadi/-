@@ -1,0 +1,112 @@
+html, body
+    margin: 0 auto
+    padding: 0
+    font-size: 100%
+    background-color: #dfdfdf
+
+section
+    display: flex
+*
+    margin: 0
+    padding: 0
+a
+    text-decoration: none
+// colors ===============================================
+    
+
+@font-face
+    font-family: 'OpenSans-SemiBold'
+    src: url("../fonts/OpenSans-SemiBold.ttf")
+@font-face
+    font-family: 'OpenSans-Light'
+    src: url("../fonts/OpenSans-Light.ttf")
+@font-face
+    font-family: 'OpenSans-Bold'
+    src: url("../fonts/OpenSans-Bold.ttf")
+@font-face 
+    font-family: 'OpenSans-ExtraBold'
+    src: url("../fonts/OpenSans-ExtraBold.ttf")
+
+
+@mixin text( $size: auto, $color: #000000, $line: initial, $family: auto)
+    font-size: $size
+    color: $color
+    line-height: $line
+    font-family: $family
+
+@mixin text-two($size: auto, $color: #000000, $line: initial, $family: auto, $decor: auto, $w-space: auto)
+    font-size: $size
+    color: $color
+    line-height: $line
+    font-family: $family
+    text-decoration: $decor
+    white-space: $w-space
+
+@mixin size($width: auto, $height: auto )
+    width: $width
+    height: $height
+
+@mixin flex($width,$height)
+    display: flex
+    @include size($width,$height)
+
+@mixin j-end-column($width,$height)
+    display: flex
+    flex-direction: column
+    justify-content: end
+    @include size($width,$height)
+
+
+@mixin column($width,$height)
+    display: flex
+    flex-direction: column
+    @include size($width,$height)
+
+@mixin j-end($width,$height)
+    display: flex
+    justify-content: end
+    @include size($width,$height)
+
+
+@mixin flex-align-center($width,$height)
+    display: flex
+    align-items: center
+    @include size($width,$height)
+
+@mixin flex-center($width,$height)
+    align-items: center
+    justify-content: center
+    @include flex($width,$height)
+
+@mixin flex-j-center($width,$height)
+    justify-content: center
+    @include flex($width,$height)
+
+@mixin flex-align-end($width,$height)
+    align-items: end
+    @include flex($width,$height)
+
+@mixin flex-space-between($width,$height)
+    justify-content: space-between
+    align-items: center
+    @include flex($width,$height)
+
+    
+@mixin background-img($img:auto, $repeat:auto, $b-size: auto)
+    background-image: $img
+    background-repeat: $repeat
+    background-size: $b-size
+
+@mixin margin($top:auto, $right:auto, $bottom:auto, $left:auto)
+    margin-top: $top
+    margin-right: $right
+    margin-bottom: $bottom
+    margin-left: $left
+    
+
+@mixin btn($width, $height)
+    border: none
+    outline: none
+    cursor: pointer
+    box-sizing: border-box
+    @include flex-center($width,$height)

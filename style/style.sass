@@ -1,0 +1,692 @@
+@import "_mixins"
+body 
+  margin: 0 auto
+  padding: 0
+
+
+.slider
+  max-width: 100%
+  // max-height: 811px
+  position: relative
+  margin: 0
+  
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img 
+  // object-fit: cover
+  // width: 100%
+  // height: 653px
+  border: none !important
+  box-shadow: none !important
+
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next 
+  cursor: pointer
+  position: absolute
+  top: 0
+  top: 50%
+  width: auto
+  margin-top: -22px
+  padding: 16px
+  color: white
+  font-weight: bold
+  font-size: 18px
+  transition: 0.6s ease
+  border-radius: 0 3px 3px 0
+
+.slider .next 
+  right: 0
+  border-radius: 3px 0 0 3px
+
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover 
+  background-color: rgba(0, 0, 0, 0.8)
+
+/* Заголовок слайда */
+.slideText 
+  position: absolute
+  color: #fff
+  font-size: 35px
+  /* Выравнивание текста по горизонтали и по вертикали*/
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  /* Тень*/
+  text-shadow: 1px 1px 1px #000, 0 0 1em #000
+
+/* Кружочки */
+// .slider-dots 
+//   text-align: center
+
+// .slider-dots_item
+//   cursor: pointer
+//   height: 12px
+//   width: 12px
+//   margin: 0 2px
+//   background-color: #ddd
+//   border-radius: 50%
+//   display: inline-block
+//   transition: background-color 0.6s ease
+
+.active,
+.slider-dots_item:hover 
+  background-color: #aaa
+
+/* Анимация слайдов */
+.slider .item 
+  -webkit-animation-name: fade
+  -webkit-animation-duration: 1.5s
+  animation-name: fade
+  animation-duration: 1.5s
+
+@-webkit-keyframes fade 
+  from 
+      opacity: .4
+  
+  to 
+      opacity: 1
+  
+
+@keyframes fade 
+  from 
+      opacity: .4
+  
+  to 
+      opacity: 1
+
+.one
+  @include size(100%, 657px)
+  @include background-img(url('../img/cran.jpg'), no-repeat, cover)
+  background-position: center
+
+.header
+  position: absolute
+  @include flex-j-center(100%,100px)
+  z-index: 1
+  
+.inner-header
+  @include flex-space-between(94% ,100%)
+  // background: blue
+
+.menu-block
+  @include flex-space-between(15.3%,60px)
+  // background: brown
+
+.menu-block__link
+  height: 28px
+
+.menu-block__images
+  @include size(65px, 29px, )
+
+.menu-block__paragraph
+  font-weight: 600
+  @include text-two(12px, #FFFFFF, 15px, OpenSans-SemiBold, none)
+  white-space: nowrap
+
+.block-two
+  margin-left: 125px
+  width: 17.5%
+  justify-content: space-between
+
+.menu-block__paragraph-two
+  @include text-two(12px, #FFFFFF, 16px, OpenSans-SemiBold, none)
+  white-space: nowrap
+
+.block-three
+  width: 15%
+  
+.menu__adres-p
+  font-weight: 600
+  @include text( 12px, #FFFFFF, 16px, OpenSans-SemiBold)
+
+.menu__adres-info
+  @include text( 10px, rgba(255, 255, 255, 1), 16px, OpenSans-Light)
+  font-weight: 300
+  white-space: nowrap
+
+.block-four
+  display: flex
+  justify-content: space-between
+  width: 13%
+
+.menu-block__number
+  font-weight: bold
+  @include text( 20px, #FFFFFF, 25px, OpenSans-Bold )
+  white-space: nowrap
+// burger
+.menu-burger 
+  display: none
+  justify-content: flex-end
+
+.menu-burger__link
+  color: #FFFFFF
+  font-size: 14px
+  
+.menu-btn 
+  top: 25px
+  @include size(50px, 50px)
+  position: fixed
+  z-index:2
+  overflow: hidden
+  background: linear-gradient(90deg, #471521 0%, #EB0E0E 100%)
+  border-radius: 24px
+
+.menu-btn span 
+  @include size(30px, 2px)
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  background-color: black
+  transition: all 0.5s
+
+.menu-burger__list
+  margin-top: 10px
+
+.menu-burger__item
+  font-size: 23px
+  line-height: 32px
+  font-weight: 800
+  color: white
+  text-decoration: none
+
+.menu-burger__btn
+  margin-left: 8px
+  @include size(95%, 41px)
+  background: linear-gradient(90deg, #232526 0%, #414345 100%)
+  color: white
+  border: none
+  border-radius: 20px 
+
+.burger_block-two
+  border: 1px solid
+  @include size(100%, 50px)
+  display: flex
+  justify-content: space-between
+  box-shadow:  0 0 15px #000000
+  border-color: #121212
+
+.menu-btn span:nth-of-type(2) 
+  top: calc(50% - 5px)
+
+.menu-btn span:nth-of-type(3) 
+  top: calc(50% + 5px)
+
+.menu 
+  position: fixed
+  top: 80px
+  right: 0px
+  @include size(370px, 409px)
+  padding: 15px
+  background: linear-gradient(90deg, #471521 0%, #EB0E0E 100%)
+  transform: translateX(100%)
+  transition: transform 0.5s 
+  
+.menu.active 
+  right: 22px
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  transform: translateX(0)
+
+.menu li 
+  list-style-type: none
+
+.menu-btn.active span:first-of-type 
+  transform: translateX(100%)
+
+.menu-btn.active span:nth-of-type(2) 
+  top: 50%
+  transform: translate(-50%, -50%) rotate(45deg)
+
+.menu-btn.active span:nth-of-type(3) 
+  top: 50%
+  transform: translate(-50%, -50%) rotate(-45deg)
+
+// main
+.main
+  @include flex-j-center(100%,513px)
+  
+.inner-main
+  @include j-end-column(94%,100%)
+ 
+.main__headig
+  @include text( 58px, #EB0E0E, 72px, OpenSans-ExtraBold)
+
+.main__paragraph
+  @include text( 24px, #FFFFFF, 38px, Open Sans)
+  font-weight: normal
+
+.btn
+  margin-top: 20px
+  @include text( 21px, white , 25px , Open Sans )
+  font-weight: bold
+  @include size(280px, 62px)
+  border: 1px solid red
+  background: red
+  color: white
+
+#main__btn
+  color: white
+
+.pop_up
+  display: none
+  @include size(100%, 100%)
+  position: fixed
+  left: 0
+  top: 0
+  background-color: rgba(0, 0, 0, .8)
+  z-index: 2
+
+.pop_up_container
+  display: flex
+  @include size(100%, 100%)
+
+.pop_up_body
+  @include flex-align-center(420px,310px)
+  flex-direction: column
+  margin: auto
+  background-color:  #ed0b0bcf
+  text-align: center
+
+.pop_up_close__container
+  @include j-end(100%, 80px)
+  background: linear-gradient(90deg, #232526 0%, #414345 85%)
+
+.pop_up_close
+  margin-right: 15px
+  padding: 0
+  border: none
+  background: linear-gradient(90deg, #232526 0%, #414345 1%)
+  cursor: pointer
+
+.pop_up_input
+  padding: 0
+  margin-top: 20px
+  @include size(283px, 40px)
+  
+.pop_up__btn
+  margin-top: 20px
+  @include text( 18px, white, 21px, Open Sans)
+  @include size(283px, 50px)
+  border: none
+  background: linear-gradient(90deg, #232526 0%, #414345 100%)
+  cursor: pointer
+
+.footer
+  @include flex-j-center(100%,137px)
+  
+.inner-footer
+  @include flex-space-between(94%,100%)
+  align-items: center
+ 
+.footer__link
+  display: flex
+
+.footer__paragraph
+  margin-left: 15px
+  margin-top: 17px
+  @include text( 18px, rgba(255, 255, 255, 0.6), 18px, Muller)
+
+.right-footer__img
+  @include size(214px, 147px)
+
+.right-footer__img:not(:last-child)
+  margin-right: 20px
+
+// info
+.info
+  @include flex-j-center(100%,657px)
+  background: #121212
+  // background: blue
+  
+.inner-info
+  flex-direction: column
+  @include flex-align-center(94%, 94%)
+  justify-content: end
+  // background: brown
+  
+.info__heading
+  @include text( 30px, #EB0E0E, 41px , OpenSans-ExtraBold)
+
+.info__container
+  margin-top: 15px
+  @include flex-space-between(100%,435px)
+  // background: green
+
+.info-container
+  @include size(50%, 100%)
+  // background: aqua
+
+.left-container
+  width: 44%
+  // background: pink
+
+.left-container__paragraph
+  font-weight: bold
+  @include text(1.1vw, white, 20px, Open Sans)
+
+.left-container__paragraph:not(:first-child)
+  margin-top: 15px
+
+.text-color
+  color: red
+
+.right-container
+  width: 54%
+  // @include background-img(url(../img/image22.jpg), no-repeat, cover)
+.right-container__img
+  width: 100%
+  height: 95%
+
+// courses
+.courses
+  align-items: center
+  @include flex-j-center(100%,657px)
+  background: #121212
+
+.inner-courses
+  flex-direction: column
+  @include flex-align-center(94%, 100%)
+  justify-content: end
+  // background: blue
+
+.courses__heading
+  margin-bottom: 20px
+  @include text( 30px, #EB0E0E, 41px , OpenSans-ExtraBold)
+  font-weight: 800
+
+.courses__container
+  display: flex
+  margin: 0 auto
+  @include size(80%, 100%)
+  // background: aqua
+
+.courses-one
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  width: 50%
+
+.courses-one__box
+  @include column(230px,210px)
+  align-items: center
+  justify-content: space-between
+.courses-one__img
+  @include size(230px, 205px)
+  @include background-img(url(../img/image22.jpg), no-repeat, cover)
+
+.courses-one__heading
+  margin-top: 10px
+  @include text( 24px, #EB0E0E, 33px , Open Sans)
+  font-weight: 800
+
+.courses-one__paragraph
+  text-align: center
+  @include text(14px, #FFFFFF, 19px , Open Sans)
+
+.courses__btn
+  font-family: OpenSans-Bold
+  margin-top: 10px
+  @include size(180px, 40px)
+  border: none
+  background: #EB0E0E
+  color: #FFFFFF
+  
+.courses-two
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  width: 50%
+  @include text(14px, #FFFFFF, 19px , Open Sans)
+  
+.mini-slider
+  width: 73%
+  position: relative
+  height: 475px
+
+.min-item__one
+  display: block
+  width: 100%
+
+.min-item__two
+  display: none
+/* Кнопки вперед и назад */
+.mini-slider .min-prev, .mini-slider .min-next 
+  cursor: pointer
+  position: absolute
+  top: 0
+  top: 50%
+  width: auto
+  margin-top: -22px
+  padding: 16px
+  color: #EB0E0E
+  font-weight: bold
+  font-size: 18px
+  transition: 0.6s ease
+  border-radius: 0 3px 3px 0
+
+.mini-slider .min-next 
+  right: 0
+  border-radius: 3px 0 0 3px
+
+/* При наведении на кнопки добавляем фон кнопок */
+.mini-slider .min-prev:hover,
+.mini-slider .min-next:hover 
+  background-color: rgba(0, 0, 0, 0.8)
+
+
+
+/* Заголовок слайда */
+.slideText 
+  position: absolute
+  color: #fff
+  font-size: 35px
+    /* Выравнивание текста по горизонтали и по вертикали*/
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+    /* Тень*/
+  text-shadow: 1px 1px 1px #000, 0 0 1em #000
+ 
+/* Анимация слайдов */
+
+.mini-slider .mini-item 
+  -webkit-animation-name: fade
+  -webkit-animation-duration: 1.5s
+  animation-name: fade
+  animation-duration: 1.5s
+
+.courses-three
+  @include size(33.3%, 100%)
+  // background: yellow
+
+// Tabs
+.btn-menu
+  @include size(214px, 314px)
+  
+.tabs__nav
+  height: 241px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.tabs__nav-btn
+  border: none
+  outline: none
+  @include size(215px , 48px)
+  @include text( 14px, #FFFFFF, 19px, OpenSans-Bold)
+  font-style: normal
+  font-weight: bold
+  background: #EB0E0E
+  
+.tabs__nav-btn:last-child
+  border-right: none
+
+.tabs__nav-btn:hover
+  outline: none
+  // background-color: #ddd
+
+.tabs__nav-btn.active
+  outline: none
+  background: linear-gradient(90deg, #232526 0%, #414345 100%)
+  color: #fff
+
+.tabs__content
+  @include size(74%, 100%)
+  
+  padding: 0
+  // background-color: #fff
+
+.tabs__item
+  min-width: 100%
+  height: 100%
+  display: none
+
+.tabs__item.active
+  display: block
+  background: #121212
+// end
+  
+// gallery 
+.gallery
+  @include flex-j-center(100%,657px)
+  background: #121212
+
+.inner-gallery
+  display: flex
+  flex-direction: column
+  @include size(94%, 100%)
+  justify-content: end
+  // background: blue
+
+.galery__heading-container
+  display: flex
+  justify-content: center
+
+.gallery__heading
+  @include text( 30px, #EB0E0E, 41px , OpenSans-ExtraBold)
+  font-weight: 800
+
+.gallery__container
+  @include flex-align-center(100%,77%)
+  justify-content: space-around
+  
+.gallery__container-one
+  @include flex-space-between(100%, 49%)
+ 
+.gallery__container-two
+   @include flex-space-between(100%, 47%)
+  
+.gallery__img
+  @include size(267px, 227px)
+
+// contacts
+
+.contacts
+  align-items: center
+  @include flex-j-center(100%,657px)
+  background: #121212
+
+.inner-contacts
+  flex-direction: column
+  @include flex-align-center(100%, 100%)
+  justify-content: end
+  // background: blue
+   
+.contacts__heading
+  @include text( 30px, #EB0E0E, 41px , OpenSans-ExtraBold)
+  font-weight: 800
+
+.contacts__container
+  display: flex
+  @include size(85%, 78%)
+  // background: aqua
+
+.left__contacts-container
+  @include column(45%,100%)
+  // background: green
+
+.up-left__container
+  @include size(100%, 158px)
+
+.adres
+  @include text( 14px, #FFFFFF, 30px , Open Sans)
+  font-weight: bold
+  font-style: normal
+
+.red-words
+  color: #EB0E0E
+
+.tel-number
+  @include text( 14px, #EB0E0E, 30px , OpenSans-Bold)
+  font-weight: bold
+  font-style: normal
+  text-decoration: none
+
+.down-left__container
+  @include size(100%, 347px)
+
+.right__contacts-container
+  @include flex-align-center(56%,100%)
+    
+.red-words-two
+  color: white
+  text-decoration: revert
+
+.input
+  border: none
+  background:  rgba(255, 255, 255, 0.4)
+  @include size(300px, 45px)
+
+.input:not(:first-child)
+  margin-top: 10px
+
+.contacts__btn
+  font-family: OpenSans-Bold
+  margin-top: 10px
+  margin-bottom: 10px
+  @include size(300px, 45px)
+  border: none
+  background:  #EB0E0E
+  color: #FFFFFF
+  cursor: pointer
+
+.footer__img
+  width: 31px
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+ 
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+     
+
+
